@@ -26,6 +26,8 @@ COPY --from=builder /app/target/release/kiro-rs /app/kiro-rs
 
 VOLUME ["/app/config"]
 
+COPY config.example.json config.json
+
 EXPOSE 8990
 
 CMD ["./kiro-rs", "-c", "/app/config/config.json", "--credentials", "/app/config/credentials.json"]
