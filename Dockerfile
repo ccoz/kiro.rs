@@ -23,10 +23,9 @@ RUN apk add --no-cache ca-certificates
 
 WORKDIR /app
 COPY --from=builder /app/target/release/kiro-rs /app/kiro-rs
+COPY config.example.json /app/config/
 
 VOLUME ["/app/config"]
-
-COPY config.example.json config.json
 
 EXPOSE 8990
 
