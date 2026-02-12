@@ -23,7 +23,7 @@ RUN apk add --no-cache ca-certificates
 
 WORKDIR /app
 COPY --from=builder /app/target/release/kiro-rs /app/kiro-rs
-COPY config.example.json /app/config/
+ADD https://raw.githubusercontent.com/hank9999/kiro.rs/refs/heads/master/config.example.json /app/config/config.json
 
 VOLUME ["/app/config"]
 
